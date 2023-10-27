@@ -21,5 +21,9 @@ fun NavigationApp(){
         composable(route = AppScreens.MenuScreen.route){
             MenuLayout(navController)
         }
+
+        composable(route = AppScreens.LoginWGScreen.route){
+            MenuLayout(navController)
+        }
     }
 }

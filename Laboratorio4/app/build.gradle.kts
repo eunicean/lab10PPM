@@ -64,9 +64,12 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx:22.1.2")
 
     //dependencies lab10, to log in with google
-    implementation("com.google.android.gms:play-services-auth:20.4.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.0")
-    implementation("io.coil-kt:coil-compose:2.2.2")
+
+    implementation ("com.google.android.gms:play-services-auth:20.4.1")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.0")
+    implementation ("androidx.lifecycle:lifecycle-runtime-compose:2.6.0")
+    implementation ("androidx.navigation:navigation-compose:2.5.3")
+    implementation ("io.coil-kt:coil-compose:2.2.2")
     //end of dependencies to lab10
 
     testImplementation("junit:junit:4.13.2")
