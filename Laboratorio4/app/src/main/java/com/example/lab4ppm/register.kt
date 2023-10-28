@@ -65,7 +65,8 @@ fun RegisterLayout(navController: NavController){
         TextField(
             value = nameU,
             onValueChange = { nameU = it },
-            label = { Text(text = "user name") },
+            label = { Text(text = "user name",
+                color = Color(0xfff28482)) },
             singleLine = true,
             colors = TextFieldDefaults.textFieldColors(
                 textColor = Color(0xff4a5759),
@@ -77,7 +78,8 @@ fun RegisterLayout(navController: NavController){
         TextField(
             value = emailU,
             onValueChange = { emailU = it },
-            label = { Text(text = "email") },
+            label = { Text(text = "email",
+                color = Color(0xfff28482)) },
             singleLine = true,
             colors = TextFieldDefaults.textFieldColors(
                 textColor = Color(0xff4a5759),
@@ -89,7 +91,8 @@ fun RegisterLayout(navController: NavController){
         TextField(
             value = pswrdU,
             onValueChange = { pswrdU = it },
-            label = { Text(text = "password") },
+            label = { Text(text = "password",
+                color = Color(0xfff28482)) },
             singleLine = true,
             colors = TextFieldDefaults.textFieldColors(
                 textColor = Color(0xff4a5759),
@@ -101,12 +104,13 @@ fun RegisterLayout(navController: NavController){
         TextField(
             value = pswrdUVer,
             onValueChange = { pswrdUVer = it },
-            label = { Text(text = "verificate password") },
+            label = { Text(text = "verificate password",
+                color = Color(0xfff28482)) },
             singleLine = true,
             colors = TextFieldDefaults.textFieldColors(
-                textColor = Color(0xff4a5759),
+                textColor = Color(0xfff28482),
                 containerColor = Color(0x004a5759),
-                unfocusedIndicatorColor = Color(0xff4a5759)
+                unfocusedIndicatorColor = Color(0xfff28482)
             )
         )
         Spacer(modifier = Modifier.height(40.dp))
@@ -123,7 +127,7 @@ fun RegisterLayout(navController: NavController){
             Text(text = "Register")
         }
         Spacer(modifier = Modifier.height(25.dp))
-        clickText(text = "Login", navController = navController, route = AppScreens.LoginScreen.route, red = 224, green = 122, blue = 95)
+        clickText(text = "Login", navController = navController, route = "sign_in", red = 224, green = 122, blue = 95)
     }
 }
 
@@ -140,7 +144,7 @@ fun registerVerification(nameU:String, emailU: String, pswrdU: String, pswrdUVer
 
     auth.createUserWithEmailAndPassword(emailU,pswrdU).addOnCompleteListener {
         if (it.isSuccessful) {
-            navController.navigate(route = AppScreens.LoginScreen.route)
+            navController.navigate(route = "sign_in")
 
         } else {
             Toast.makeText(context, "Couldn't register", Toast.LENGTH_LONG).show()

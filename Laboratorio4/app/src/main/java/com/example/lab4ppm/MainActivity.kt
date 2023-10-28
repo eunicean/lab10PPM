@@ -92,7 +92,8 @@ class MainActivity : ComponentActivity() {
                                             ).build()
                                         )
                                     }
-                                }
+                                },
+                                navController
                             )
                         }
                         composable("profile") {
@@ -108,8 +109,16 @@ class MainActivity : ComponentActivity() {
                                         ).show()
                                         navController.popBackStack()
                                     }
-                                }
+                                },
+                                auth.currentUser?.email
                             )
+                        }
+                        composable(route = AppScreens.LoginScreen.route){
+                            LoginLayout(navController)
+                        }
+
+                        composable(route = AppScreens.SignUpScreen.route){
+                            RegisterLayout(navController)
                         }
                     }
                 }

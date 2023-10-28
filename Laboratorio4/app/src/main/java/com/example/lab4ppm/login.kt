@@ -95,20 +95,7 @@ fun LoginLayout(navController: NavController){
             Text(text = "Login")
         }
         Spacer(modifier = Modifier.height(25.dp))
-        Button(
-            modifier = Modifier
-                .width(190.dp)
-                .height(60.dp),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xfff28482)
-            ),
-            onClick = {
-                navController.navigate(AppScreens.LoginWGScreen.route) }
-        ) {
-            Text(text = "Login with Google")
-        }
-        Spacer(modifier = Modifier.height(25.dp))
-        clickText(text = "Register", navController = navController, route = AppScreens.RegisterScreen.route, red = 224, green = 122, blue = 95)
+        clickText(text = "Register", navController = navController, route = AppScreens.SignUpScreen.route, red = 224, green = 122, blue = 95)
     }
 }
 
@@ -131,7 +118,7 @@ fun loginVerification(emailU: String, pswrdU: String, navController: NavControll
 
     auth.signInWithEmailAndPassword(emailU,pswrdU).addOnCompleteListener {
         if (it.isSuccessful) {
-            navController.navigate(route = AppScreens.MenuScreen.route)
+            navController.navigate(route = "profile")
 
         } else {
             Toast.makeText(context, "Email or password incorrect", Toast.LENGTH_LONG).show()
